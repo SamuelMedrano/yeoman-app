@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Notebook <input type="submit" class ="btn btn-primary" ng-click="removeTodoAll()" value = "Clear All"></h2>
+
+
+  <form role="form" ng-submit = "addTodo()">
+    <div class="row">
+     <input type="text" ng-model="todo" placeholder="What do you want to do?" class="form-control">
+       
+          <input type="submit" class="btn btn-primary" value="Submit">
+ 
+      </div>
+    </div>
+  </form>
+ 
+
+
+
+
+ <div ui-sortable ng-model="todos">
+    <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">{{todos[$index]}}
+        <input type="text" ng-show="Edit" ng-model="text" class="edit" name="ok" value="todo">
+        <input type="submit"  class="btn btn-default" ng-show="Edit"  ng-model="checked" aria-label="Enter" ng-click="Edit=false ; editTodo($index)" value="Submit">
+        <button  class="btn btn-default" ng-click= "Edit=true" ng-hide="Edit" aria-label="Toggle ngHide">Edit</button>
+        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+        <input type="checkbox" ng-model="checked" >
+
+      <!--<span class="input-group-btn">
+       
+      </span> -->
+    </p>
+</div>
+</div>

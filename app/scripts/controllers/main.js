@@ -13,7 +13,7 @@ angular.module('yeomanAppApp')
     var todosInStore = localStorageService.get('todos');
 	
     $scope.todos = todosInStore || [];
-    $scope.text = 'kill';
+    
     $scope.$watch('todos', function () {
       localStorageService.set('todos', $scope.todos);
     }, true);
